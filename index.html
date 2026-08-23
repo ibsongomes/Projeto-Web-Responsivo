@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cadastro de Usuários</h1>
+
+    <form class="form-grid" id="form-cadastro">
+
+        <label>Nome</label>
+        <input type="text" id="nome" placeholder="nome do usuário" class="full">
+
+        <label>Endereço</label>
+        <input type="text" placeholder="endereço" class="full">
+
+        <label>Complemento</label>
+        <input type="text" placeholder="Complemento de endereço">
+
+        <label>Cidade</label>
+        <input type="text" placeholder="Cidade">
+
+        <label>Estado</label>
+        <select>
+            <option>PE</option>
+            <option>RJ</option>
+        </select>
+
+        <label>CEP</label>
+        <input type="text" placeholder="CEP">
+
+        <label>Áreas de Interesse</label>
+        <select multiple class="full">
+            <option>Inteligência Artificial</option>
+            <option>Datawarehouse & Datamining</option>
+            <option>Rede de Computadores</option>
+        </select>
+
+        <label>Observações</label>
+        <textarea class="full" placeholder="Texto livre"></textarea>
+
+        <div class="botoes">
+        <button id="ok">ok</button>
+        <button id="cancelar">cancelar</button>
+        </div>
+    </form>
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

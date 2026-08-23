@@ -1,0 +1,51 @@
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 2px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr 120px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+input, select, textarea {
+    width: 100%;
+}
+
+.full {
+    grid-column: span 3;
+}
+
+textarea {
+    height: 100px;
+}
+
+select[multiple] {
+    height: 80px;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.botoes {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr; 
+    }
+    .full {
+        grid-column: 1 / -1; 
+    }
+}

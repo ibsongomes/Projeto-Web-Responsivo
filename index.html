@@ -13,40 +13,44 @@
 
     <form class="form-grid" id="form-cadastro">
 
-        <label>Nome</label>
+        <label for="nome">Nome</label>
         <input type="text" id="nome" placeholder="nome do usuário" class="full">
 
-        <label>Endereço</label>
-        <input type="text" placeholder="endereço" class="full">
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" placeholder="CEP" class="full">
 
-        <label>Complemento</label>
-        <input type="text" placeholder="Complemento de endereço">
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" placeholder="endereço" class="full">
 
-        <label>Cidade</label>
-        <input type="text" placeholder="Cidade">
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" placeholder="Complemento de endereço">
 
-        <label>Estado</label>
-        <select>
-            <option>PE</option>
-            <option>RJ</option>
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" placeholder="Cidade">
+
+        <label for="estado">Estado</label>
+        <select id="estado" class="full">
+            <option value="">Selecione...</option>
+            <option value="PE">PE</option>
+            <option value="RJ">RJ</option>
+            <option value="SP">SP</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
         </select>
 
-        <label>CEP</label>
-        <input type="text" placeholder="CEP">
-
-        <label>Áreas de Interesse</label>
-        <select multiple class="full">
-            <option>Inteligência Artificial</option>
-            <option>Datawarehouse & Datamining</option>
-            <option>Rede de Computadores</option>
+        <label for="areas">Áreas de Interesse</label>
+        <select id="areas" multiple class="full">
+            <option value="IA">Inteligência Artificial</option>
+            <option value="DD">Datawarehouse & Datamining</option>
+            <option value="RC">Rede de Computadores</option>
         </select>
 
-        <label>Observações</label>
-        <textarea class="full" placeholder="Texto livre"></textarea>
+        <label for="obs">Observações</label>
+        <textarea class="full" id="obs" placeholder="Texto livre"></textarea>
 
         <div class="botoes">
-        <button id="ok">ok</button>
-        <button id="cancelar">cancelar</button>
+        <button type="submit" id="ok">ok</button>
+        <button type="button" id="cancelar">cancelar</button>
         </div>
     </form>
 

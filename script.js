@@ -6,7 +6,10 @@ const inputCep = document.getElementById('cep');
 const inputEndereco = document.getElementById('endereco');
 const inputCidade = document.getElementById('cidade');
 const selectEstado = document.getElementById('estado');
+const inputFoto = document.getElementById('foto');
+const previewFoto = document.getElementById('preview-foto');
 let cepValido = false;
+
 
 btnOk.addEventListener('click', function(event) {
     event.preventDefault();
@@ -26,6 +29,9 @@ btnOk.addEventListener('click', function(event) {
         
         form.reset();
         cepValido = false;
+
+        previewFoto.src = '';
+        previewFoto.style.display = 'none';
     }
 });
 
@@ -38,6 +44,9 @@ btnCancelar.addEventListener('click', function(event) {
         inputNome.style.border = '1px solid #ccc';
         inputCep.style.border = '1px solid #ccc';
         cepValido = false;
+
+        previewFoto.src = '';
+        previewFoto.style.display = 'none';
     }
 });
 
@@ -82,3 +91,29 @@ inputNome.addEventListener('input', function() {
         inputNome.style.border = '1px solid #ccc';
     }
 });
+
+inputCep.addEventListener('input', function() {
+    inputCep.style.border = '1px solid #ccc';
+    cepValido = false;
+});
+
+inputFoto.addEventListener('change', function(event) {
+    const arquivo = event.target.files[0];
+    
+    if (arquivo) {
+        const urlDaImagem = URL.createObjectURL(arquivo);
+        previewFoto.src = urlDaImagem;
+        previewFoto.style.display = 'block';
+    } else {
+        previewFoto.src = '';
+        previewFoto.style.display = 'none';
+    }
+});
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registrado com sucesso!'))
+            .catch(err => console.log('Erro ao registrar Service Worker', err));
+    });
+}

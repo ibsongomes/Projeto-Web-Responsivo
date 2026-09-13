@@ -49,3 +49,12 @@ select[multiple] {
         grid-column: 1 / -1; 
     }
 }
+
+#preview-foto {
+    display: none;
+    max-width: 150px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    grid-column: 1 / -1;
+}
